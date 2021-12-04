@@ -1,6 +1,5 @@
 {
 	"name": "cloud.vaitschulis.com",
-	"homepage": "cloud.vaitschulis.com",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
