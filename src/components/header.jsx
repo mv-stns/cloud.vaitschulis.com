@@ -1,99 +1,91 @@
-import React, { Component } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon, LogoutIcon } from "@heroicons/react/solid";
+import Modal from "./modals/settingsmodal";
+import ThemeToggle from "./scripts/ThemeToggle";
+import profileImage from "./assets/profile.png";
+import { VERSION_NUMBER, VERSION_TXT, VERSION_STXT} from "./version";
 
-class Header extends React.Component {
-	render() {
-		return (
-			<div>
-				<div className="h-4 w-full bg-white dark:bg-gray-900"></div>
-				<header id="mainnav" className="w-full mx-auto px-3 bg-white dark:bg-gray-900">
-					<nav className="container h16 mx-auto">
-						<div className="h-full items-center flex justify-between px-2 sm:px-2 md:px-2 lg:px-0">
-							<span className="font-sharp-sans font-black text-gray-900 dark:text-white">v.Cloud</span>
-							<div className="relative inline-block text-left">
-								<div>
-									<button className="inline-flex justify-center justify-items-center align-middle w-full px-4 py-2 text-sm rounded-2xl font-medium text-gray-700 hover:text-gray-500">
-										<span className="inline-block relative mr-4">
-											<span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-blue-700 border-2 border-blue-200">
-												<img src="https://vaitschulis.com/wp-content/uploads/logo/profile-e1638139724991.png" alt="Profilepic" />
-											</span>
-											<span className="absolute top-0 right-0 block h-3 w-3">
-												<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 border border-1 border-red-500"></span>
-												<span className="absolute rounded-full h-full w-full bg-red-500"></span>
-											</span>
-										</span>
-										<span className="my-auto font-black text-gray-900 dark:text-white">MV</span>
-										<svg className="-mr-1 ml-2 h-5 w-5 my-auto fill-current text-gray-900 dark:text-white" x-description="Heroicon name: solid/chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-											<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-										</svg>
-									</button>
-								</div>
-								<div class="origin-top-right absolute right-0 mt-4 pt-10 px-3 w-80 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 dark:divide-gray-600 focus:outline-none z-50">
-									<div class="py-1" role="none">
-										<div class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300" role="menuitem" tabindex="-1" id="menu-item-0">
-											<span class="font-black mr-3">MV</span>
-											<span class="text-xs px-2 py-1 rounded bg-blue-200 text-blue-600 font-metropolis font-semibold">AZUBI</span>
-										</div>
-										<div class="relative pt-1 px-4">
-											<div class="overflow-hidden h-1 mb-2 text-xs flex rounded bg-gray-100 dark:bg-gray-700">
-												<div class="w- shadow-none flex flex-col text-center whitespace-nowrap text-white dark:text-gray-900 justify-center bg-gray-500"></div>
-											</div>
-											<div class="flex mb-2 items-center justify-between">
-												<div>
-													<span class="text-xs inline-block py-1 px-4 font-metropolis font-medium rounded-full text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800">83% von 100%</span>
-												</div>
-											</div>
-										</div>
-										<div>
-											<button class="group flex items-center w-full my-5 px-4 py-2 text-sm font-bold text-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-400 rounded-lg border-2 border-white dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 dark:hover:border-gray-400 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer">
-												<svg class="mr-3 w-5 h-5 text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-													<path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
-												</svg>
-												Einstellungen
-											</button>
-											<div class="fixed z-50 inset-0 overflow-y-auto" role="dialog">
-												<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-													<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-													<span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
-													<div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 shadow-2xl">
-														<div class="sm:flex sm:items-start">
-															<div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-																<svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-																	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-																</svg>
-															</div>
-															<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-																<h3 class="text-lg leading-6 font-black text-gray-900">Whoops!</h3>
-																<div class="mt-2">
-																	<p class="text-sm text-gray-500">Diese Funktion ist derzeit nicht verfügbar. Bitte komm zu einem späteren Zeitpunkt wieder.</p>
-																</div>
-															</div>
-														</div>
-														<div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-															<button class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:mt-0 sm:w-auto sm:text-sm">Okay</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<button class="group flex items-center w-full disabled:opacity-30 pointer-events-none my-5 px-4 py-2 text-sm font-bold text-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-400 rounded-lg border-2 border-white dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 dark:hover:border-gray-400 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer">
-											<svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: solid/logout" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-												<path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
-											</svg>
-											Logout
-										</button>
-										<div class="flex items-center w-full my-5 px-4 py-2 text-xs font-black text-gray-200 select-none">
-											<div class="mr-3 h-5 w-5"></div>
-											V-1.0.0
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</header>
-			</div>
-		);
+export default function Header() {
+	const [scroll, setScroll] = useState(false);
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			setScroll(window.scrollY >= 8);
+		});
+	}, []);
+	let [isOpen, setIsOpen] = useState(true);
+
+	function openModal() {
+		setIsOpen(true);
 	}
+	return (
+		<>
+			<div className={scroll ? "w-full h-4  bg-white dark:bg-zinc-900" : "w-full h-4 bg-white dark:bg-zinc-900"}></div>
+			<div className={scroll ? "w-full mx-auto px-3 border-b dark:border-zinc-800 sticky top-0 z-[200000] shadow-xl transition-all ease-in-out duration-100 bg-white dark:bg-zinc-900" : "w-full navigation sticky top-0 mx-auto px-3 bg-white dark:bg-zinc-900 z-[200000]"}>
+				<div className="container h-20 mx-auto">
+					<div className="flex items-center justify-between h-full px-2 mx-auto max-w-screen-2xl sm:px-2 md:px-2 lg:px-0">
+						<span className="font-black cursor-default select-none text-zinc-900 font-sharp-sans dark:text-white">v.Cloud</span>
+						<Menu as="div" className="relative z-[200] inline-block text-left">
+							<div>
+								<Menu.Button className="inline-flex justify-center w-full px-4 py-1 text-sm font-medium align-middle rounded-sm text-zinc-700 justify-items-center hover:text-zinc-500">
+									<span className="relative inline-block mt-2 mr-4">
+										<div className="relative w-10 h-10">
+											<span className="inline-flex items-center justify-center w-10 h-10 bg-blue-700 mask mask-squircle"></span>
+											<img className="absolute left-0 -top-1" src={profileImage} alt="Profilepic" />
+										</div>
+										<span className="absolute top-[3%] right-[3%] block w-3 h-3">
+											<span className="absolute inline-flex w-full h-full my-auto bg-red-400 border border-red-500 rounded-full animate-ping border-1"></span>
+											<span className="absolute w-full h-full bg-red-500 rounded-full"></span>
+										</span>
+									</span>
+									<span class="my-auto font-black text-zinc-900 dark:text-white">MV</span>
+									<ChevronDownIcon className="w-5 h-5 my-auto ml-2 -mr-1 fill-current text-zinc-900 dark:text-white" aria-hidden="true" />
+								</Menu.Button>
+							</div>
+							<Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
+								<Menu.Items className="absolute right-0 z-10 px-3 pt-10 mt-4 origin-top-right bg-white divide-y divide-zinc-100 rounded-md shadow-lg w-72 md:w-[320px] dark:bg-zinc-900 ring-1 ring-black ring-opacity-5 dark:divide-zinc-600 focus:outline-none">
+									<div className="py-1 ">
+										<div className="flex items-center px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300" role="menuitem" tabindex="-1" id="menu-item-0">
+											<span className="mr-3 font-black">MV</span>
+											<span className="px-2 py-1 text-xs font-semibold text-blue-600 bg-blue-200 rounded font-metropolis">AZUBI</span>
+										</div>
+										<div className="relative px-4 pt-1">
+											<div className="flex h-1 mb-2 overflow-hidden text-xs rounded bg-zinc-100 dark:bg-zinc-700">
+												<div className="flex flex-col justify-center w-10/12 text-center text-white shadow-none bg-zinc-500 whitespace-nowrap dark:text-zinc-900"></div>
+											</div>
+											<div className="flex items-center justify-between mb-2">
+												<div>
+													<span className="inline-block px-4 py-1 text-xs font-medium rounded-full text-zinc-600 bg-zinc-100 font-metropolis dark:text-zinc-400 dark:bg-zinc-800">83% von 100%</span>
+												</div>
+											</div>
+										</div>
+										<Menu.Item>
+											<ThemeToggle />
+										</Menu.Item>
+										<Menu.Item>{({ active }) => <Modal />}</Menu.Item>
+										<div data-tip="Derzeit ist diese Funktion nicht verfügbar" className="tooltip">
+											<Menu.Item disabled>
+												{({ active }) => (
+													<button className={`${active ? "text-zinc-700 bg-zinc-200 border-zinc-200 dark:text-zinc-400 dark:bg-zinc-600 dark:border-zinc-400 " : "text-zinc-700 dark:text-zinc-400 border-white dark:border-zinc-700 bg-white dark:bg-zinc-700"} group flex items-center w-full my-5 px-4 py-2 text-xs md:text-sm font-bold rounded-lg border-2 opacity-30 pointer-events-none`}>
+														{active ? <LogoutIcon className="w-3 h-3 mr-2 md:w-5 md:h-5 text-zinc-500 dark:text-zinc-400" fill="currentColor" aria-hidden="true" /> : <LogoutIcon className="w-3 h-3 mr-2 md:w-5 md:h-5 text-zinc-400" fill="currentColor" aria-hidden="true" />}
+														Logout
+													</button>
+												)}
+											</Menu.Item>
+										</div>
+										<Menu.Item>
+											<button className="flex items-center w-full px-4 py-2 my-5 text-sm font-bold rounded-lg pointer-events-none select-none text-zinc-700 dark:text-zinc-400 opacity-30">
+												<div className="w-5 h-5 mr-2"></div>
+												<span className="lowercase">{VERSION_STXT}</span> {VERSION_NUMBER}
+											</button>
+										</Menu.Item>
+									</div>
+								</Menu.Items>
+							</Transition>
+						</Menu>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
-
-export default Header;
