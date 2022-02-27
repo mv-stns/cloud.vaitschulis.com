@@ -32,13 +32,13 @@
 	"source": "src/index.html",
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "npm run watch:css && react-scripts build",
+		"build": "CI=false && npm run watch:css && react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"watch:css": "postcss src/index.css -o public/index.css",
 		"livewatch:css": "postcss src/index.css -o public/index.css -w",
 		"watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
-		"dev": "concurrently \"npm run livewatch:css\" \"npm run start\"",
+		"dev": "concurrently \"npm run livewatch:css\" \"CI=false && npm run start\"",
 		"storybook": "start-storybook -p 6006 -s public",
 		"build-storybook": "build-storybook -s public"
 	},
