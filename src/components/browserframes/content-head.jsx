@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
 import { VERSION_NUMBER, VERSION_TXT} from "../version";
-import contentheadvideo from "../assets/isometric-loop.mp4";
+import contentheadvideo from "../assets/isometric-loop.webp";
 import headerimg from "../assets/bg-01.webp";
 
 export default function ContentHead() {
