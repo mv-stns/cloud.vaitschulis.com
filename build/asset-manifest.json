@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05cf0320.chunk.css",
+    "main.js": "/static/js/main.9cb9ef59.chunk.js",
+    "main.js.map": "/static/js/main.9cb9ef59.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.928578c7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.928578c7.js.map",
+    "static/js/2.f94314f0.chunk.js": "/static/js/2.f94314f0.chunk.js",
+    "static/js/2.f94314f0.chunk.js.map": "/static/js/2.f94314f0.chunk.js.map",
+    "static/js/3.0a8d99ea.chunk.js": "/static/js/3.0a8d99ea.chunk.js",
+    "static/js/3.0a8d99ea.chunk.js.map": "/static/js/3.0a8d99ea.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.05cf0320.chunk.css.map": "/static/css/main.05cf0320.chunk.css.map",
+    "static/js/2.f94314f0.chunk.js.LICENSE.txt": "/static/js/2.f94314f0.chunk.js.LICENSE.txt",
+    "static/media/metropolis.css": "/static/media/Metropolis-ThinItalic.e0e60000.ttf",
+    "static/media/sharpsans.css": "/static/media/SharpSans-ThinItalic.4b4e8a4b.otf",
+    "static/media/bg-01.f5fc4b03.png": "/static/media/bg-01.f5fc4b03.png",
+    "static/media/isometric-loop.d6cec76f.mp4": "/static/media/isometric-loop.d6cec76f.mp4",
+    "static/media/profile.b15b8365.png": "/static/media/profile.b15b8365.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.928578c7.js",
+    "static/js/2.f94314f0.chunk.js",
+    "static/css/main.05cf0320.chunk.css",
+    "static/js/main.9cb9ef59.chunk.js"
+  ]
+}
