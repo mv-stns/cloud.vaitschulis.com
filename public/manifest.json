@@ -2,37 +2,73 @@
 	"name": "Favicons",
 	"icons": [
 		{
-			"src": "\/favicon-36.png",
+			"src": "\/light-favicon-36.png",
 			"sizes": "36x36",
 			"type": "image\/png",
 			"density": 0.75
 		},
 		{
-			"src": "\/favicon-48.png",
+			"src": "\/light-favicon-48.png",
 			"sizes": "48x48",
 			"type": "image\/png",
 			"density": 1
 		},
 		{
-			"src": "\/favicon-72.png",
+			"src": "\/light-favicon-72.png",
 			"sizes": "72x72",
 			"type": "image\/png",
 			"density": 1.5
 		},
 		{
-			"src": "\/favicon-96.png",
+			"src": "\/light-favicon-96.png",
 			"sizes": "96x96",
 			"type": "image\/png",
 			"density": 2
 		},
 		{
-			"src": "\/favicon-144.png",
+			"src": "\/light-favicon-144.png",
 			"sizes": "144x144",
 			"type": "image\/png",
 			"density": 3
 		},
 		{
-			"src": "\/favicon-192.png",
+			"src": "\/light-favicon-192.png",
+			"sizes": "192x192",
+			"type": "image\/png",
+			"density": 4
+		},
+		{
+			"src": "\/dark-favicon-36.png",
+			"sizes": "36x36",
+			"type": "image\/png",
+			"density": 0.75
+		},
+		{
+			"src": "\/dark-favicon-48.png",
+			"sizes": "48x48",
+			"type": "image\/png",
+			"density": 1
+		},
+		{
+			"src": "\/dark-favicon-72.png",
+			"sizes": "72x72",
+			"type": "image\/png",
+			"density": 1.5
+		},
+		{
+			"src": "\/dark-favicon-96.png",
+			"sizes": "96x96",
+			"type": "image\/png",
+			"density": 2
+		},
+		{
+			"src": "\/dark-favicon-144.png",
+			"sizes": "144x144",
+			"type": "image\/png",
+			"density": 3
+		},
+		{
+			"src": "\/dark-favicon-192.png",
 			"sizes": "192x192",
 			"type": "image\/png",
 			"density": 4

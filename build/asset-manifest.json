@@ -1,27 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.05cf0320.chunk.css",
-    "main.js": "/static/js/main.44b5585e.chunk.js",
-    "main.js.map": "/static/js/main.44b5585e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.928578c7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.928578c7.js.map",
-    "static/js/2.f94314f0.chunk.js": "/static/js/2.f94314f0.chunk.js",
-    "static/js/2.f94314f0.chunk.js.map": "/static/js/2.f94314f0.chunk.js.map",
-    "static/js/3.0a8d99ea.chunk.js": "/static/js/3.0a8d99ea.chunk.js",
-    "static/js/3.0a8d99ea.chunk.js.map": "/static/js/3.0a8d99ea.chunk.js.map",
+    "main.css": "/static/css/main.35dae41a.chunk.css",
+    "main.js": "/static/js/main.cd6a9520.chunk.js",
+    "main.js.map": "/static/js/main.cd6a9520.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.57a629ab.js",
+    "runtime-main.js.map": "/static/js/runtime-main.57a629ab.js.map",
+    "static/js/2.56f2e4ef.chunk.js": "/static/js/2.56f2e4ef.chunk.js",
+    "static/js/2.56f2e4ef.chunk.js.map": "/static/js/2.56f2e4ef.chunk.js.map",
+    "static/js/3.7ec75151.chunk.js": "/static/js/3.7ec75151.chunk.js",
+    "static/js/3.7ec75151.chunk.js.map": "/static/js/3.7ec75151.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.05cf0320.chunk.css.map": "/static/css/main.05cf0320.chunk.css.map",
-    "static/js/2.f94314f0.chunk.js.LICENSE.txt": "/static/js/2.f94314f0.chunk.js.LICENSE.txt",
+    "static/css/main.35dae41a.chunk.css.map": "/static/css/main.35dae41a.chunk.css.map",
+    "static/js/2.56f2e4ef.chunk.js.LICENSE.txt": "/static/js/2.56f2e4ef.chunk.js.LICENSE.txt",
     "static/media/metropolis.css": "/static/media/Metropolis-ThinItalic.e0e60000.ttf",
     "static/media/sharpsans.css": "/static/media/SharpSans-ThinItalic.4b4e8a4b.otf",
     "static/media/bg-01.814ad130.webp": "/static/media/bg-01.814ad130.webp",
+    "static/media/dark-favicon-192.d46cc09f.png": "/static/media/dark-favicon-192.d46cc09f.png",
+    "static/media/dark-weshare-favicon-nobg.26aeb31e.svg": "/static/media/dark-weshare-favicon-nobg.26aeb31e.svg",
     "static/media/isometric-loop.52b43ab9.webp": "/static/media/isometric-loop.52b43ab9.webp",
+    "static/media/light-favicon-192.a67e1da8.png": "/static/media/light-favicon-192.a67e1da8.png",
+    "static/media/light-weshare-favicon-nobg.91a7a3aa.svg": "/static/media/light-weshare-favicon-nobg.91a7a3aa.svg",
     "static/media/profile.b15b8365.png": "/static/media/profile.b15b8365.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.928578c7.js",
-    "static/js/2.f94314f0.chunk.js",
-    "static/css/main.05cf0320.chunk.css",
-    "static/js/main.44b5585e.chunk.js"
+    "static/js/runtime-main.57a629ab.js",
+    "static/js/2.56f2e4ef.chunk.js",
+    "static/css/main.35dae41a.chunk.css",
+    "static/js/main.cd6a9520.chunk.js"
   ]
 }

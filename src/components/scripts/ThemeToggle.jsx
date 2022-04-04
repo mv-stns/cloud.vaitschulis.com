@@ -1,8 +1,9 @@
-//ThemeToggle.js
 import React, { useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 import { Switch } from "@headlessui/react";
+import light_vcloud from "../assets/favicons/light-favicon-192.png";
+import dark_vcloud from "../assets/favicons/dark-favicon-192.png";
 
 const Toggle = () => {
 	const { theme, setTheme } = React.useContext(ThemeContext);
@@ -12,6 +13,25 @@ const Toggle = () => {
 		setEnabled();
 		setTheme(theme === "dark" ? "light" : "dark");
 	};
+
+	function getFaviconEl() {
+		return document.getElementById("favicon");
+		//   if theme is equal to dark, set getFaviconEl ref to dark icon else to light icon
+	}
+	function getAppFaviconEl() {
+		return document.getElementById("appfavicon");
+		//   if theme is equal to dark, set getFaviconEl ref to dark icon else to light icon
+	}
+	if (theme === "dark") {
+		getFaviconEl().href = "/light-favicon-192.png";
+		getAppFaviconEl().href = "/light-favicon-192.png";
+	} else {
+		getFaviconEl().href = "/dark-favicon-192.png";
+		getAppFaviconEl().href = "/dark-favicon-192.png";
+	}
+
+	
+
 	return (
 		<>
 			<Switch.Group onClick={triggerswitch}>
@@ -30,3 +50,4 @@ const Toggle = () => {
 };
 
 export default Toggle;
+export const triggerswitch = () => {}
