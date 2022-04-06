@@ -15,7 +15,7 @@ export default function MyModal() {
 
 	return (
 		<>
-			<button onClick={openModal} className="flex items-center w-full px-4 py-2 my-5 text-xs font-bold bg-white border-2 border-white rounded-lg md:text-sm text-zinc-700 hover:text-zinc-700 hover:bg-zinc-200 hover:border-zinc-200 hover:dark:text-zinc-400 hover:dark:bg-zinc-600 hover:dark:border-zinc-400 dark:text-zinc-400 dark:border-zinc-700 dark:bg-zinc-700 group">
+			<button onClick={openModal} className="flex items-center w-full h-10 px-4 py-2 my-5 text-xs font-bold bg-white border-2 border-white rounded-lg md:text-sm text-zinc-700 hover:text-zinc-700 hover:bg-zinc-200 hover:border-zinc-200 hover:dark:text-zinc-400 hover:dark:bg-zinc-600 hover:dark:border-zinc-400 dark:text-zinc-400 dark:border-zinc-700 dark:bg-zinc-700 group">
 				<CogIcon className="w-3 h-3 mr-2 md:w-5 md:h-5 text-zinc-400 hover:text-zinc-500 hover:dark:text-zinc-400" fill="currentColor" aria-hidden="true" />
 				Einstellungen
 			</button>
