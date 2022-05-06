@@ -1,140 +1,154 @@
-/* Webfont: SharpSans-Thin */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Thin.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Thin.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 100;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Thin */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Thin.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Thin.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 100;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-ThinItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-ThinItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-ThinItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 100;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-ThinItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-ThinItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-ThinItalic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 100;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-Light */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Light.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Light.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Light */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Light.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Light.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-LightItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-LightItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-LightItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-LightItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-LightItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-LightItalic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-Regular */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Regular.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Regular */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Regular.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Regular.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-Italic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Italic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Italic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Italic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Italic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Italic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-Medium */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Medium.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Medium.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 500;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Medium */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Medium.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Medium.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-MediumItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-MediumItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-MediumItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 500;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-MediumItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-MediumItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-MediumItalic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-SemiBold */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-SemiBold.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-SemiBold.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 600;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-SemiBold */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-SemiBold.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-SemiBold.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-SemiBoldItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-SemiboldItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-SemiboldItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 600;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-SemiBoldItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-SemiboldItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-SemiboldItalic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-Bold */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Bold.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Bold.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 700;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-Bold */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Bold.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Bold.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-BoldItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-BoldItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-BoldItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 700;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-BoldItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-BoldItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-BoldItalic.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-ExtraBold */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-Extrabold.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-Extrabold.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: 800;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-ExtraBold */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Extrabold.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-Extrabold.otf") format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
 
-/* Webfont: SharpSans-ExtraBoldItalic */@font-face {
-    font-family: 'Sharp Sans';
-    src: url('SharpSans-ExtraboldItalic.woff2') format('woff2'), /* Modern Browsers */
-         url('SharpSans-ExtraboldItalic.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: italic;
-    font-weight: 800;
-    text-rendering: optimizeLegibility;
-    font-display: swap;
+/* Webfont: SharpSans-ExtraBoldItalic */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-ExtraboldItalic.woff2") format("woff2"),
+    /* Modern Browsers */ url("SharpSans-ExtraboldItalic.otf")
+      format("opentype"); /* Safari, Android, iOS */
+  font-style: italic;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
 }
-
