@@ -1,5 +1,5 @@
-![v.Status Ping](https://status.vaitschulis.com/api/badge/1/ping/24)
-![v.Status Uptime](https://status.vaitschulis.com/api/badge/1/uptime/24)
+![v.Status Ping](https://status.vaitschulis.com/api/badge/1/ping/24?style=flat-square)
+![v.Status Uptime](https://status.vaitschulis.com/api/badge/1/uptime/24?style=flat-square)
 
 # Getting Started with Create React App
 
