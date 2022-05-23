@@ -1,3 +1,6 @@
+![v.Status Ping](https://status.vaitschulis.com/api/badge/1/ping/24)
+![v.Status Uptime](https://status.vaitschulis.com/api/badge/1/uptime/24)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
