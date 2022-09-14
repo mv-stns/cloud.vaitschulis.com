@@ -1,7 +1,8 @@
-<?php
-  $userName = "Marcus";
-?>
 <!DOCTYPE html>
+<!--
+    todolist for heightapp:
+      // T-27 start building basic components
+  -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,15 +10,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <title>v.CLOUD Personal Portfolio</title>
-  <!--
-    todolist for heightapp:
-      // T-28 add tailwindcss to the header
-      // T-27 start building basic components
-  -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-  <h1 class="font-black tracking-tight font-sans text-3xl">
-    Hello <?php $userName ?>
-  </h1>
+  <header>
+  </header>
+  <main></main>
+  <footer></footer>
+
+  <!--
+    all the scripts
+  -->
 </body>
 </html>
