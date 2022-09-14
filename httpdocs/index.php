@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- T-27 start building basic components -->
 <html lang="en">
 
 <head>
