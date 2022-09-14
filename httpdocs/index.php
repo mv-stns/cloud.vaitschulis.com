@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-    todolist for heightapp:
-      // T-27 start building basic components
-      // T-30 build main gradient component
-  -->
+<!-- T-27 start building basic components -->
 <html lang="en">
 
 <head>
