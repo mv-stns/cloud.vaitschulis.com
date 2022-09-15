@@ -1,3 +1,4 @@
 {
-  "editor.hover.sticky": false
+  "editor.hover.sticky": false,
+  "editor.stickyScroll.maxLineCount": 1
 }

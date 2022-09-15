@@ -138,7 +138,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
 
 
       <img src="./assets/img/blobs/vertical_static.png" class="inset-0 hidden object-cover w-full h-screen sm:block md:hidden" />
-      <img src="./assets/img/blobs/horizontal_static.png" class="inset-0 hidden object-cover w-full h-screen sm:hidden md:block lg:hidden" />
+      <img src="./assets/img/blobs/horizontal_static.png" class="inset-0 object-cover w-full h-screen sm:hidden md:block lg:hidden" />
       <svg class="hidden w-screen h-screen lg:block" viewBox="0 0 1512 982" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g width="100%">
           <rect width="100%" height="100%" fill="#252525" />
