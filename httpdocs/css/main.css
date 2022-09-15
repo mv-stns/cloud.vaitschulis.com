@@ -1332,6 +1332,14 @@ select {
 }
 @media (min-width: 640px) {
 
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1371,6 +1379,14 @@ select {
     margin-right: auto;
   }
 
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:max-w-3xl {
     max-width: 48rem;
   }
@@ -1389,6 +1405,10 @@ select {
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .lg\:block {
+    display: block;
   }
 
   .lg\:flex {

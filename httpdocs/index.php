@@ -13,7 +13,7 @@
 </head>
 
 <body class="relative">
-<header class="top-0 absolute w-full z-[50] bg-white backdrop-blur-xl shadow-xl lg:overflow-y-visible" x-state:on="Open" x-state:off="Closed" :class="{ 'fixed inset-0 z-40 overflow-y-auto': open }" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+<header class="top-0 absolute w-full z-[50] bg-white backdrop-blur-xl lg:overflow-y-visible" x-state:on="Open" x-state:off="Closed" :class="{ 'fixed inset-0 z-40 overflow-y-auto': open }" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
         <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
@@ -135,10 +135,12 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
   <main class="relative w-screen h-screen overflow-hidden">
     <div class="relative bg-[#252525]">
       <img src="./assets/img/blobs/subtle_grain.png" class="absolute pointer-events-none inset-0 w-full h-full object-cover z-[1] opacity-10 mix-blend-darken" />
-      <!-- <div class="absolute inset-0 bg-black/50 mix-blend-darken"></div> -->
 
-      <svg viewBox="0 0 1512 982" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_878_1737)">
+
+      <img src="./assets/img/blobs/vertical_static.png" class="inset-0 hidden object-cover w-full h-screen sm:block md:hidden" />
+      <img src="./assets/img/blobs/horizontal_static.png" class="inset-0 hidden object-cover w-full h-screen sm:hidden md:block lg:hidden" />
+      <svg class="hidden w-screen h-screen lg:block" viewBox="0 0 1512 982" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g width="100%">
           <rect width="100%" height="100%" fill="#252525" />
           <g filter="url(#filter0_f_878_1737)">
             <path d="M984 217.5C984 359 658.5 387.756 583 456.5C507.5 525.244 158.359 964 -19.5 964C-162.829 1141.33 -139 1008 -52.805 933.553C-174.626 933.553 -103.184 -0.252945 -103.184 -97.0044C-103.184 -193.756 355.031 -40.2318 476.852 -40.2318C763.466 -126.742 984 120.749 984 217.5Z" fill="#A390CE" />
@@ -172,7 +174,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
             <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_878_1737" />
           </filter>
           <clipPath id="clip0_878_1737">
-            <rect width="1512" height="982" fill="white" />
+            <rect width="100%" height="982" fill="white" />
           </clipPath>
         </defs>
       </svg>
