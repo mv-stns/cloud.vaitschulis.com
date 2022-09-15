@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
@@ -134,7 +134,7 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
 
   <main class="relative w-screen h-screen overflow-hidden">
     <div class="relative bg-[#252525]">
-      <img src="./assets/img/blobs/subtle_grain.png" class="absolute inset-0 w-full h-full object-cover z-[1] opacity-10 mix-blend-darken" />
+      <img src="./assets/img/blobs/subtle_grain.png" class="absolute pointer-events-none inset-0 w-full h-full object-cover z-[1] opacity-10 mix-blend-darken" />
       <!-- <div class="absolute inset-0 bg-black/50 mix-blend-darken"></div> -->
 
       <svg viewBox="0 0 1512 982" fill="none" xmlns="http://www.w3.org/2000/svg">
