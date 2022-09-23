@@ -1,5 +1,8 @@
 <?php
 ?>
+<!-- T-34 Hide searchbar for not logged in users -->
+<!-- T-35 Hide Bell for not logged in users -->
+<!-- T-36 Hide Userpic for not logged in users -->
 <header class="absolute top-0 z-10 w-full bg-white backdrop-blur-xl lg:overflow-y-visible" x-state:on="Open" x-state:off="Closed" :class="{ 'fixed inset-0 z-40 overflow-y-auto': open }" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
@@ -84,12 +87,31 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
 
                 <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                   <div>
+
+                    <div id="errorModel" class="relative hidden p-4 rounded-md bg-red-50 animate-pulse">
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <!-- Heroicon name: solid/x-circle -->
+                          <svg class="w-5 h-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                        <div class="ml-3">
+                          <h3 class="text-sm font-medium text-red-800">Fehler</h3>
+                          <div class="mt-2 text-sm text-red-700">
+                            <ul id="errorList" role="list" class="pl-5 space-y-1 list-disc">
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <form class="mt-8 space-y-6" action="#" method="POST">
                       <input type="hidden" name="remember" value="true">
                       <div class="-space-y-px rounded-md shadow-sm">
                         <div>
-                          <label for="username" class="sr-only">Benutzername</label>
-                          <input id="username" name="username" type="text" required="" class="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Benutzername">
+                          <label for="email" class="sr-only">E-Mail</label>
+                          <input id="email" name="email" type="text" required="" class="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="E-Mail">
                         </div>
                         <div>
                           <label for="password" class="sr-only">Passwort</label>
@@ -112,8 +134,8 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                         </div>
                       </div>
 
-                      <div>
-                        <button type="button" onclick="checkUser()" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <div id="signInContainer">
+                        <button id="signIn" type="button" onclick="login()" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                           <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <svg class="w-5 h-5 text-indigo-500 group-hover:text-indigo-400" x-description="Heroicon name: solid/lock-closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
@@ -175,23 +197,91 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
     </div>
   </nav>
 </header>
-<!-- <script>
-  // check User
-  async function checkUser() {
-    const response = await fetch('/api/user', {
-      method: 'GET',
+<script>
+  // when button signIn is pressed, run animation ping again
+  function signIn() {
+    document.getElementById("signIn").classList.add("ping");
+    setTimeout(function() {
+      document.getElementById("signIn").classList.remove("ping");
+    }, 1000);
+  }
+  // register
+  // send json request to php file api/users.php
+  // await response with status and message
+  // if status is success, redirect to dashboard
+  // if status is error, display error message
+  async function register() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const action = 'register';
+    const response = await fetch('api/users.php', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({
+        action,
+        email,
+        password
+      })
     });
     const data = await response.json();
-    if (data.user) {
-      document.getElementById('user').innerHTML = data.user;
-      document.getElementById('user').style.display = 'block';
-      document.getElementById('login').style.display = 'none';
+    if (data.status === 'success') {
+      window.location.href = 'dashboard.php';
     } else {
-      document.getElementById('user').style.display = 'none';
-      document.getElementById('login').style.display = 'block';
+      document.getElementById('error').innerHTML = data.message;
     }
   }
-</script> -->
+  // login
+  // send json request to php file api/users.php
+  // await response with status and message
+  // if status is success, redirect to dashboard
+  // if status is error, display error message
+  async function login() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const action = 'login';
+    const response = await fetch('api/users.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        action,
+        email,
+        password
+      })
+    });
+    const data = await response.json();
+    if (data.status === 'success') {
+      // window.location.href = 'dashboard.php';
+      // remove signIn button from dom and exchange it with the following code:
+      //       <button disabled type="button" class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
+      //     <svg aria-hidden="true" role="status" class="inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      //     <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+      //     <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#1C64F2"/>
+      //     </svg>
+      //     Loading...
+      // </button>
+      document.getElementById('signIn').remove();
+      document.getElementById('signInContainer').innerHTML = `<button disabled type="button" class="py-2.5 px-5 w-full inline-flex justify-center items-center mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
+      <svg aria-hidden="true" role="status" class="inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+      <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#1C64F2"/>
+      </svg>
+      Sie werden eingeloggt...
+      </button>`;
+      // after 2 seconds redirect to dashboard
+      setTimeout(() => {
+        window.location.href = '/dashboard.php';
+      }, 4000);
+
+
+    } else {
+      // remove class hidden from errorModel
+      document.getElementById('errorModel').classList.remove('hidden');
+      // add data.message to errorList as a list item
+      document.getElementById('errorList').innerHTML = `<li>${data.message}</li>`;
+    }
+  }
+</script>
