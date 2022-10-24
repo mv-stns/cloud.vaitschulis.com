@@ -18,50 +18,49 @@ require 'config/globalSettings.php';
 
 <body class="relative overflow-hidden">
 
-  <?php
-  // load header component from components folder
-  include 'components/header.php';
-  ?>
+<?php
+// load header component from components folder
+include 'components/header.php';
+?>
 
-  <main class="overflow-hidden">
+<main class="overflow-hidden">
 
-    <div class="w-screen h-screen">
-      <div class="w-[200vw] h-96 bg-white absolute bottom-[30rem] -left-40 -rotate-12 overflow-hidden"></div>
-      <canvas id="gradient-canvas" data-transition-in></canvas>
-      <div class="w-[200vw] h-[32rem] bg-white absolute bottom-0"></div>
-    </div>
+  <div class="w-screen h-screen flex">
+    <h1 class="text-3xl">Welcome to v.Cloud</h1>
+    <div class="w-[200vw] h-screen bg-white absolute top-[60%] -left-40 -rotate-12 overflow-hidden"></div>
+    <canvas id="gradient-canvas" data-transition-in></canvas>
+  </div>
 
 
+</main>
 
-  </main>
+<footer></footer>
 
-  <footer></footer>
-
-  <!--
-    all the scripts
-  -->
-  <script defer>
-    // get the userpic from github api and set it
-    fetch('https://api.github.com/users/mv-stns')
-      .then(response => response.json())
-      .then(data => {
-        // set all elements with class userpic to the image
-        document.querySelectorAll('.userpic').forEach((el) => {
-          el.src = data.avatar_url;
-        });
+<!--
+  all the scripts
+-->
+<script defer>
+  // get the userpic from github api and set it
+  fetch("https://api.github.com/users/mv-stns")
+    .then(response => response.json())
+    .then(data => {
+      // set all elements with class userpic to the image
+      document.querySelectorAll(".userpic").forEach((el) => {
+        el.src = data.avatar_url;
       });
-  </script>
-  <script type="module">
-    import {
-      Gradient
-    } from './scripts/Gradient.js';
+    });
+</script>
+<script type="module">
+  import {
+    Gradient
+  } from "./scripts/Gradient.js";
 
-    // Create your instance
-    const gradient = new Gradient()
+  // Create your instance
+  const gradient = new Gradient();
 
-    // Call `initGradient` with the selector to your canvas
-    gradient.initGradient('#gradient-canvas')
-  </script>
+  // Call `initGradient` with the selector to your canvas
+  gradient.initGradient("#gradient-canvas");
+</script>
 </body>
 
 </html>

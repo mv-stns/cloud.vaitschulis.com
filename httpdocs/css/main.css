@@ -1050,6 +1050,21 @@ input[type="range"]::-ms-fill-lower {
 .right-0 {
   right: 0px;
 }
+.bottom-\[25\%\] {
+  bottom: 25%;
+}
+.bottom-\[5\%\] {
+  bottom: 5%;
+}
+.top-\[5\%\] {
+  top: 5%;
+}
+.top-\[75\%\] {
+  top: 75%;
+}
+.top-\[60\%\] {
+  top: 60%;
+}
 .z-10 {
   z-index: 10;
 }
@@ -1136,9 +1151,6 @@ input[type="range"]::-ms-fill-lower {
 .min-h-screen {
   min-height: 100vh;
 }
-.w-auto {
-  width: auto;
-}
 .w-screen {
   width: 100vw;
 }
@@ -1147,6 +1159,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .w-full {
   width: 100%;
+}
+.w-auto {
+  width: auto;
 }
 .w-5 {
   width: 1.25rem;
@@ -1439,6 +1454,10 @@ input[type="range"]::-ms-fill-lower {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-medium {
   font-weight: 500;
